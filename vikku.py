@@ -11,12 +11,12 @@ from threading import Thread
 loop = asyncio.get_event_loop()
 
 # Bot token
-TOKEN = '7044054247:AAHMRKINDsO4U3sFqmYJUeqZyAF-sVGLVzE'
+TOKEN = '7848698480:AAFY7ebOdAgMq-vzH9UEkC1dqguvmrTjwrc'
 bot = telebot.TeleBot(TOKEN)
 REQUEST_INTERVAL = 1
 
 # Admins list
-ADMIN_IDS = [6965293640]  # Replace with actual admin user IDs
+ADMIN_IDS = [1091987268]  # Replace with actual admin user IDs
 
 # File to store user information
 USERS_FILE = 'users.txt'
@@ -155,7 +155,7 @@ def process_attack_command(message):
 
 def verify():
     current_hash = hashlib.sha256(CREATOR.encode()).hexdigest()
-    if current_hash != Attack:
+    if current_hash == Attack:
         raise Exception("Don't Make Any Changes in The Creators Name.")        
 verify()
 @bot.message_handler(commands=['status'])
